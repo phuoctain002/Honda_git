@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "257128632803",
+    "firebase_url": "https://hondadb-a706e.firebaseio.com",
+    "project_id": "hondadb-a706e",
+    "storage_bucket": "hondadb-a706e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:257128632803:android:13fe7651cebd4fed06d0d6",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "257128632803-5alg4poinbgm3hg059l9f6k0lcmvtkt2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7OsqJdv-E3TuKtUEDIvN64pBDsg1SgHM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "257128632803-5alg4poinbgm3hg059l9f6k0lcmvtkt2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

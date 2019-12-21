@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+    <!-- TODO: ĐỔI GIAO DIỆN USER -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:background="@color/Transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NHANH CÒN KỊP…
+Chàng thanh niên dáng vẻ buồn bã thất vọng, đứng trên thành cầu đăm đăm nhìn xuống dòng nước xoáy cuộn. Sau lưng anh ta, một phóng viên bồn chồn đi lại với chiếc máy ảnh trong tay. Cuối cùng, tay nhà báo sốt ruột xem đồng hồ rồi chạy lên nói với anh chàng chán đời kia:
+
+- Này anh bạn, quyết định rồi thì nhảy sớm đi, chỉ còn có 3 phút nữa thôi đấy!
+
+- Đối với tôi thời gian đâu có ý nghĩa gì?
+
+- Nhưng chậm hơn thì anh sẽ không kịp lọt vào báo Tin tức buổi chiều đâu!"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MIỄN TRẢ LẠI
+Vị linh mục nói với bố cô dâu:
+
+- Khi cầm tay con gái đưa cho chú rể, ông nên nói một câu thật ý nghĩa nhé!
+
+- Ông bố vợ vốn là chủ tiệm tạp hóa, khi cầm tay con gái đưa cho con rể đã nói: Nhận rồi miễn trả lại nhé!"
+                android:textSize="15dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MUA THIẾU
+Chàng trai trẻ mua tặng cô vợ mới cưới một cái chổi. Vừa hua tay vung vẩy, cô vợ vừa hỏi:
+
+- Hướng dẫn sử dụng đâu anh?"
+                android:textSize="15dp" />
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
