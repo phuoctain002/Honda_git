@@ -3,12 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    tools:showIn="@layout/fragment_tintuc"
     android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp">
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="60dp">
     <Toolbar
         android:layout_marginLeft="-15dp"
         android:layout_width="match_parent"
@@ -41,7 +39,7 @@
     <ViewFlipper
         android:id="@+id/v_flipper"
         android:layout_width="wrap_content"
-        android:layout_height="250dp"
+        android:layout_height="210dp"
         android:layout_centerHorizontal="true">
     </ViewFlipper>
     <TextView
@@ -51,11 +49,15 @@
         android:textColor="@android:color/black"
         android:textStyle="bold"/>
 
-    <com.google.android.material.card.MaterialCardView
+    <ListView
+        android:id="@+id/listTintuc"
         android:layout_width="match_parent"
-        android:layout_height="130dp"
-        app:cardCornerRadius="20dp"
-        android:foreground="@drawable/home_slide_1">
-    </com.google.android.material.card.MaterialCardView>
+        android:layout_height="wrap_content"
+        android:divider="@null"/>
+<Button
+    android:id="@+id/them"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    />
 
 </LinearLayout>

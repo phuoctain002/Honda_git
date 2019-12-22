@@ -46,7 +46,7 @@ public class HomeFragment extends Fragment {
 
     private static int currentPage = 0;
     private static int NUM_PAGES = 0;
-    private static final Integer[] IMAGES= {R.drawable.ic_build_black_24dp,R.drawable.ic_search_black_24dp,R.drawable.ic_home_black_24dp,R.drawable.logo};
+    //private static final Integer[] IMAGES= {R.drawable.ic_build_black_24dp,R.drawable.ic_search_black_24dp,R.drawable.ic_home_black_24dp,R.drawable.logo};
     private ArrayList<Integer> ImagesArray = new ArrayList<Integer>();
 
     @Override
