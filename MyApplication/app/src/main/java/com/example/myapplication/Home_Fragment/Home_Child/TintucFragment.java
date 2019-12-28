@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.example.myapplication.Adapter.TintucAdapter;
@@ -71,6 +72,7 @@ public class TintucFragment extends Fragment{
         ChildEventListener childEventListener = new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String previousChildName) {
+
                 progressBar.setVisibility(view.GONE);
                 TinTucModel tt = dataSnapshot.getValue(TinTucModel.class);
                 adapter.add(tt);

@@ -38,18 +38,23 @@ public class XedamuaAdapter extends ArrayAdapter<XedamuaModel> {
         TextView textNgaymua = (TextView)convertView.findViewById(R.id.tvNgaymua);
         ImageView imageView = (ImageView)convertView.findViewById(R.id.ivXedamua);
 
-            final XedamuaModel xdm = getItem(position);
+        final XedamuaModel xdm = getItem(position);
 
         textTenxe.setText(xdm.getTenxe());
         textSokhung.setText(xdm.getSokhung());
         textTinhtrang.setText(xdm.getTinhtrang());
-        textNgaymua.setText(xdm.getNgaymua());
-        if (xdm.base64 != null && !xdm.base64.isEmpty()) {
-            byte[] decodedString = Base64.decode(xdm.base64, Base64.DEFAULT);
-            Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
-            imageView.setImageBitmap(decodedByte);
+        textNgaymua.setText(xdm.getNgaymua() == null ? "" : xdm.getNgaymua());
+        try {
+            if (xdm.hinh != null && !xdm.hinh.isEmpty()) {
+                byte[] decodedString = Base64.decode(xdm.hinh, Base64.DEFAULT);
+                Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+                imageView.setImageBitmap(decodedByte);
+            }
+            else {
+                imageView.setImageResource(R.drawable.noimg);
+            }
         }
-        else {
+        catch (Exception ex) {
             imageView.setImageResource(R.drawable.noimg);
         }
 

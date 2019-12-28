@@ -27,11 +27,13 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_marginLeft="2dp">
+
             <TextView
                 android:id="@+id/tvTenxe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/tvSokhung"
                 android:layout_width="match_parent"
@@ -39,6 +41,11 @@
                 />
             <TextView
                 android:id="@+id/tvTinhtrang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:id="@+id/tvNgaymua"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 />

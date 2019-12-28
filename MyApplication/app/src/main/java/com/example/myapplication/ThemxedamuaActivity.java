@@ -28,7 +28,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
-public class ThemxeActivity extends AppCompatActivity {
+public class ThemxedamuaActivity extends AppCompatActivity {
     public static int RESULT_LOAD_IMAGE = 1;
 
     ImageView img;
@@ -120,13 +120,14 @@ public class ThemxeActivity extends AppCompatActivity {
 
                     XedamuaModel xdm = new XedamuaModel( txtTenxe, txtSokhung,txtTinhtrang,txtNgaymua, null);
                     if (picturePath != null && picturePath != "") {
-                        xdm.base64 = encodeImage(picturePath);
+                        xdm.hinh = encodeImage(picturePath);
                     }
 
                     // uploadFile();
                     String key = mDatabase.child("xedamua").push().getKey();
                     mDatabase.child("xedamua").child(key).setValue(xdm);
-                    //i.putExtra("xedamua", xdm);
+//                    i.putExtra("xedamua", xdm);
+                    i.putExtra("xedamua",xdm);
                     finish();
                     Toast.makeText(getApplicationContext(), "Thêm thành công!", Toast.LENGTH_LONG).show();
                 }
