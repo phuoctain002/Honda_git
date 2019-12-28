@@ -58,6 +58,7 @@ Learn more about components on the Jetpack home page. For more information about
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_dichvu">Sữa chữa \&amp; bảo hành </string>
+    <string name="title_damua">Danh sách xe đã mua </string>
     <string name="title_sanpham">Sản phẩm</string>
     <string name="title_home">Trang chính</string>
     <string name="title_setting">Cài đặt</string>
