@@ -120,13 +120,14 @@ public class ThemxedamuaActivity extends AppCompatActivity {
 
                     XedamuaModel xdm = new XedamuaModel( txtTenxe, txtSokhung,txtTinhtrang,txtNgaymua, null);
                     if (picturePath != null && picturePath != "") {
-                        xdm.base64 = encodeImage(picturePath);
+                        xdm.hinh = encodeImage(picturePath);
                     }
 
                     // uploadFile();
                     String key = mDatabase.child("xedamua").push().getKey();
                     mDatabase.child("xedamua").child(key).setValue(xdm);
-                    //i.putExtra("xedamua", xdm);
+//                    i.putExtra("xedamua", xdm);
+                    i.putExtra("xedamua",xdm);
                     finish();
                     Toast.makeText(getApplicationContext(), "Thêm thành công!", Toast.LENGTH_LONG).show();
                 }
