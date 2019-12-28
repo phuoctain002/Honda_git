@@ -1,6 +1,9 @@
 package com.example.myapplication.Adapter;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,12 +35,23 @@ public class XedamuaAdapter extends ArrayAdapter<XedamuaModel> {
         TextView textTenxe = (TextView)convertView.findViewById(R.id.tvTenxe);
         TextView textSokhung = (TextView)convertView.findViewById(R.id.tvSokhung);
         TextView textTinhtrang = (TextView)convertView.findViewById(R.id.tvTinhtrang);
+        TextView textNgaymua = (TextView)convertView.findViewById(R.id.tvNgaymua);
         ImageView imageView = (ImageView)convertView.findViewById(R.id.ivXedamua);
 
-        textTenxe.setText(arrayList.get(position).getTenxe());
-        textSokhung.setText(arrayList.get(position).getSokhung());
-        textTinhtrang.setText(arrayList.get(position).getTinhtrang());
-        imageView.setImageResource(arrayList.get(position).getImageId());
+            final XedamuaModel xdm = getItem(position);
+
+        textTenxe.setText(xdm.getTenxe());
+        textSokhung.setText(xdm.getSokhung());
+        textTinhtrang.setText(xdm.getTinhtrang());
+        textNgaymua.setText(xdm.getNgaymua());
+        if (xdm.base64 != null && !xdm.base64.isEmpty()) {
+            byte[] decodedString = Base64.decode(xdm.base64, Base64.DEFAULT);
+            Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+            imageView.setImageBitmap(decodedByte);
+        }
+        else {
+            imageView.setImageResource(R.drawable.noimg);
+        }
 
         return  convertView;
     }

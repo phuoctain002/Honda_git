@@ -1,25 +1,29 @@
 package com.example.myapplication.Model;
 
 public class XedamuaModel {
-    private int ImageId;
+    private String ImageId;
     private String Tenxe;
     private String Sokhung;
-    private  String Tinhtrang;
+    private String Tinhtrang;
+    private String Ngaymua;
+    public String base64;
 
+    public XedamuaModel() {
 
-    public XedamuaModel(int imageId, String tenxe, String sokhung, String tinhtrang) {
+    }
+    public XedamuaModel( String tenxe, String sokhung, String tinhtrang, String ngaymua,String imageId) {
         ImageId = imageId;
         Tenxe = tenxe;
         Sokhung = sokhung;
         Tinhtrang = tinhtrang;
-
+        Ngaymua = ngaymua;
     }
 
-    public int getImageId() {
+    public String getImageId() {
         return ImageId;
     }
 
-    public void setImageId(int imageId) {
+    public void setImageId(String imageId) {
         ImageId = imageId;
     }
 
@@ -46,4 +50,8 @@ public class XedamuaModel {
     public void setTinhtrang(String tinhtrang) {
         Tinhtrang = tinhtrang;
     }
+
+    public String getNgaymua() {return Ngaymua;}
+
+    public void setNgaymua(String ngaymua) {Ngaymua = ngaymua;}
 }
