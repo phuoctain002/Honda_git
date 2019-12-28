@@ -46,7 +46,6 @@
                 android:background="@drawable/icontayga"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
                 >
             </Button>
         </androidx.cardview.widget.CardView>
@@ -61,7 +60,7 @@
                 android:id="@+id/btnXeso"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
+                
                 android:background="@drawable/iconxeso">
             </Button>
         </androidx.cardview.widget.CardView>
@@ -75,7 +74,8 @@
                 android:id="@+id/btnMoto"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/iconmoto">
+                android:background="@drawable/iconmoto"
+                >
             </Button>
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
@@ -85,13 +85,12 @@
             card_view:cardUseCompatPadding="true"
             card_view:cardCornerRadius="8dp">
 
-
             <Button
                 android:id="@+id/btnContay"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/iconcontay"></Button>
-
+                android:background="@drawable/iconcontay"
+                />
         </androidx.cardview.widget.CardView>
 
     </LinearLayout>

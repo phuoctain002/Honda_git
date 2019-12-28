@@ -1,6 +1,7 @@
 package com.example.myapplication.SanPham_Fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TabHost;
@@ -22,6 +24,8 @@ import com.example.myapplication.Adapter.XedamuaAdapter;
 import com.example.myapplication.Model.XedamuaModel;
 import com.example.myapplication.R;
 import com.example.myapplication.SanPham_Fragment.SanPham_Child.SPDaMuaFragment;
+import com.example.myapplication.SanPham_Fragment.SanPham_Child.TraCuuSPFragment;
+import com.example.myapplication.XeActivity;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -45,6 +49,12 @@ public class SanphamFragment extends Fragment {
     ProgressBar progressBar;
     private Toolbar toolbar;
     View view;
+    public String loaixe;
+    Button btnXeTayga, btnXeso, btnMoto;
+
+
+    int[] sampleImages = {R.drawable.icontayga, R.drawable.icontayga};
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -54,6 +64,18 @@ public class SanphamFragment extends Fragment {
         arrayList = new ArrayList<>();
 
         xedamuaAdapter = new XedamuaAdapter(SanphamFragment.this.getActivity(),R.layout.item_listview_xedamua);
+
+        btnXeTayga = view.findViewById(R.id.btnXetayga);
+
+        View.OnClickListener eventLoaiXe = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                xuLyLoaiXe(v);
+            }
+        };
+
+        btnXeTayga.setOnClickListener(eventLoaiXe);
+
         loadTabs();
         addControlls();
         addData();
@@ -138,6 +160,42 @@ public class SanphamFragment extends Fragment {
     private void addControlls() {
         listXedamua = view.findViewById(R.id.listDamua);
         progressBar = view.findViewById(R.id.progressBar);
+
+    }
+
+    public void xuLyLoaiXe(View v) {
+        Intent intent = new Intent(SanphamFragment.this.getActivity(), XeActivity.class);
+        switch(v.getId()){
+
+            case R.id.btnXetayga: /** Start a new Activity MyCards.java */
+                this.loaixe = "Tay ga";
+
+                intent.putExtra("LOAIXE",loaixe);
+                this.startActivity(intent);
+                break;
+
+            case R.id.btnXeso:
+                this.loaixe = "xeso";
+
+                intent.putExtra("LOAIXE",loaixe);
+                this.startActivity(intent);
+                break;
+
+            case R.id.btnMoto:
+                this.loaixe = "xetaycon";
+
+                intent.putExtra("LOAIXE",loaixe);
+                this.startActivity(intent);
+                break;
+
+            case R.id.btnContay:
+                this.loaixe = "xemoto";
+
+                intent.putExtra("LOAIXE",loaixe);
+                this.startActivity(intent);
+                break;
+        }
+
 
     }
 

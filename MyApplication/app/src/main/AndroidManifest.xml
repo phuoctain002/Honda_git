@@ -26,8 +26,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
         <activity android:name=".MainActivity">
@@ -37,6 +35,7 @@
         <activity android:name=".CaiDat"></activity>
         <activity android:name=".test"></activity>
         <activity android:name=".DaiLy"></activity>
+        <activity android:name=".XeActivity"></activity>
         <activity android:name=".SanPham_Fragment.SanPham_Child.TraCuuSPFragment"></activity>
         <activity android:name=".Confirm_Ad" android:theme="@style/Theme.AppCompat.DayNight.Dialog"></activity>
     </application>
