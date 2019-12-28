@@ -1,5 +1,6 @@
 package com.example.myapplication.SanPham_Fragment.SanPham_Child;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,4 +38,19 @@ public class TraCuuSPFragment extends Fragment {
             imageView.setImageResource(sampleImages[position]);
         }
     };
+
+//    public void onClick(View v) {
+//
+//        switch(v.getId()){
+//
+//            case R.id.btnXetayga: /** Start a new Activity MyCards.java */
+//                Intent intent = new Intent(this, MyCards.class);
+//                this.startActivity(intent);
+//                break;
+//
+//            case R.id.btnXeso: /** AlerDialog when click on Exit */
+//                MyAlertDialog();
+//                break;
+//        }
+//    }
 }

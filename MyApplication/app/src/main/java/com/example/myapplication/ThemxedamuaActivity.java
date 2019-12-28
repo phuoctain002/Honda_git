@@ -28,7 +28,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
-public class ThemxeActivity extends AppCompatActivity {
+public class ThemxedamuaActivity extends AppCompatActivity {
     public static int RESULT_LOAD_IMAGE = 1;
 
     ImageView img;
