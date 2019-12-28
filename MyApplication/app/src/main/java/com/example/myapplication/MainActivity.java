@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
 
 import com.example.myapplication.DichVu_Fragment.DichVuFragment;
@@ -16,6 +18,7 @@ import com.example.myapplication.Home_Fragment.Home_Child.TintucFragment;
 import com.example.myapplication.SanPham_Fragment.SanPham_Child.SPDaMuaFragment;
 import com.example.myapplication.SanPham_Fragment.SanphamFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
 import java.util.ArrayList;
@@ -29,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private SanphamFragment sanphamFragment;
     private TaiKhoanFragment taiKhoanFragment;
     private CaiDat caiDat;
+    FloatingActionButton btnCall;
 
 
 
@@ -44,8 +48,10 @@ public class MainActivity extends AppCompatActivity {
         sanphamFragment = new SanphamFragment();
         taiKhoanFragment = new TaiKhoanFragment();
         caiDat = new CaiDat();
+        btnCall = (FloatingActionButton) findViewById(R.id.btnCall);
 
         setFragment(tintucFragment);
+        addEvent();
 
         mMainNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -115,6 +121,16 @@ public class MainActivity extends AppCompatActivity {
             fragmentTransaction.commit();
         }
 
+    }
+
+    public void addEvent(){
+        btnCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, DaiLy.class);
+                startActivity(i);
+            }
+        });
     }
 
 

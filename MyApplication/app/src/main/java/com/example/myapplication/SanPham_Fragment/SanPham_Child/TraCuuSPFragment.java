@@ -5,9 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.myapplication.R;
@@ -17,6 +14,8 @@ import com.synnapps.carouselview.ImageListener;
 public class TraCuuSPFragment extends Fragment {
     View view;
     CarouselView carouselView;
+
+
     int[] sampleImages = {R.drawable.icontayga, R.drawable.icontayga};
     @Override
     public View onCreateView( LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
