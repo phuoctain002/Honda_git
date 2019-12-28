@@ -1,6 +1,243 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    >
 
+    <com.synnapps.carouselview.CarouselView
+        android:id="@+id/carouselView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:fillColor="#FFFFFFFF"
+        app:pageColor="#00000000"
+        app:radius="6dp"
+        app:slideInterval="3000"
+        app:strokeColor="#FF777777"
+        app:strokeWidth="1dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:text="Xe máy"
+        android:textStyle="bold"
+        >
+    </TextView>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        >
+        <androidx.cardview.widget.CardView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginRight="10dp"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardCornerRadius="8dp">
+            <Button
+                android:id="@+id/btnXetayga"
+                android:background="@drawable/icontayga"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                >
+            </Button>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginRight="10dp"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardCornerRadius="8dp">
+
+            <Button
+                android:id="@+id/btnXeso"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:background="@drawable/iconxeso">
+            </Button>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginRight="10dp"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardCornerRadius="8dp">
+            <Button
+                android:id="@+id/btnMoto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/iconmoto">
+            </Button>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginRight="20dp"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardCornerRadius="8dp">
+
+
+            <Button
+                android:id="@+id/btnContay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/iconcontay"></Button>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xe tay ga"
+            android:layout_marginLeft="20dp">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xe số"
+            android:layout_marginLeft="130dp">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xe Motor"
+            android:layout_marginLeft="220dp">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xe côn tay"
+            android:layout_marginLeft="310dp">
+
+        </TextView>
+
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/xemthem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="xem thêm >>"
+        android:textColor="#E91E63" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:text="Ô tô"
+        android:textStyle="bold"
+        >
+    </TextView>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        >
+        <androidx.cardview.widget.CardView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginRight="10dp"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardCornerRadius="8dp">
+            <Button
+                android:id="@+id/btnCivic"
+                android:background="@drawable/iconcivic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </Button>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginRight="10dp"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardCornerRadius="8dp">
+
+            <Button
+                android:id="@+id/btnBrio"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:background="@drawable/iconbrio">
+            </Button>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginRight="10dp"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardCornerRadius="8dp">
+            <Button
+                android:id="@+id/btnCity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/iconcity">
+            </Button>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginRight="20dp"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardCornerRadius="8dp">
+
+
+            <Button
+                android:id="@+id/btnAccord"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/iconaccord"></Button>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Civic"
+            android:layout_marginLeft="20dp">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Brio"
+            android:layout_marginLeft="130dp">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="City"
+            android:layout_marginLeft="230dp">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Accord"
+            android:layout_marginLeft="320dp">
+
+        </TextView>
+
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/xemtatcaxehoi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="xem tất cả >>"
+        android:textColor="#E91E63" />
 </LinearLayout>

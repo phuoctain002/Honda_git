@@ -2,6 +2,9 @@ package com.example.myapplication.Adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +13,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
 import com.example.myapplication.Model.TinTucModel;
 import com.example.myapplication.R;
@@ -44,9 +45,18 @@ public class TintucAdapter extends ArrayAdapter<TinTucModel> {
         TextView textDesc = (TextView)convertView.findViewById(R.id.tvDesc);
         ImageView imageView = (ImageView)convertView.findViewById(R.id.ivTintuc);
 
-        textTitle.setText(arrayList.get(position).getTitle());
-        textDesc.setText(arrayList.get(position).getDescription());
-        imageView.setImageResource(arrayList.get(position).getImageId());
+        final TinTucModel tt = getItem(position);
+
+      textTitle.setText(tt.getTitle());
+      textDesc.setText(tt.getDescription());
+        if (tt.base64 != null && !tt.base64.isEmpty()) {
+            byte[] decodedString = Base64.decode(tt.base64, Base64.DEFAULT);
+            Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+            imageView.setImageBitmap(decodedByte);
+        }
+        else {
+            imageView.setImageResource(R.drawable.noimg);
+        }
 
         return  convertView;
     }

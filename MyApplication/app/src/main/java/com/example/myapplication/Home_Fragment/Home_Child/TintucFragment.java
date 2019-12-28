@@ -16,12 +16,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.ViewFlipper;
 
 import com.example.myapplication.Adapter.TintucAdapter;
 import com.example.myapplication.MainActivity;
 import com.example.myapplication.Model.TinTucModel;
 import com.example.myapplication.R;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -40,7 +44,9 @@ public class TintucFragment extends Fragment{
     Button them;
     TintucAdapter adapter;
     // database
-    DatabaseReference mDataBase;
+    DatabaseReference mDatabase;
+    ProgressBar progressBar;
+
 
     @Override
     public View onCreateView( LayoutInflater inflater, ViewGroup container,  Bundle savedInstanceState) {
@@ -48,7 +54,6 @@ public class TintucFragment extends Fragment{
         view = inflater.inflate(R.layout.fragment_tintuc, container, false);
 
        addControlls();
-       addEvent();
        addData();
        addFirebBase();
 
@@ -61,7 +66,39 @@ public class TintucFragment extends Fragment{
     }
 
     private void addFirebBase() {
+        progressBar.setVisibility(view.VISIBLE);
+        mDatabase = FirebaseDatabase.getInstance().getReference("tintuc");
+        ChildEventListener childEventListener = new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String previousChildName) {
+                progressBar.setVisibility(view.GONE);
+                TinTucModel tt = dataSnapshot.getValue(TinTucModel.class);
+                adapter.add(tt);
+            }
 
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+
+
+        };
+        mDatabase.addChildEventListener(childEventListener);
     }
 
     private void addData() {
@@ -69,19 +106,12 @@ public class TintucFragment extends Fragment{
         listTintuc.setAdapter(adapter);
     }
 
-    private void addEvent() {
-        them.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getActivity(), ThemtintucActivity.class);
-                startActivity(i);
-            }
-        });
-    }
+
 
     private void addControlls() {
         listTintuc = view.findViewById(R.id.listTintuc);
-        them = view.findViewById(R.id.them);
+
+        progressBar = view.findViewById(R.id.progressBar);
     }
 
     public void flipperImages(int image){

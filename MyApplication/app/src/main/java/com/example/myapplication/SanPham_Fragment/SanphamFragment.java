@@ -47,13 +47,13 @@ public class SanphamFragment extends Fragment {
         //Tạo tab2
         spec = tab.newTabSpec("t2");
         spec.setContent(R.id.tab2);
-        spec.setIndicator("SP đã mua");
+        spec.setIndicator("Xe của tôi");
         tab.addTab(spec);
 
         //Tạo tab3
         spec = tab.newTabSpec("t3");
         spec.setContent(R.id.tab3);
-        spec.setIndicator("SP yêu thích");
+        spec.setIndicator("Yêu thích");
         tab.addTab(spec);
 
         //Set Tab
