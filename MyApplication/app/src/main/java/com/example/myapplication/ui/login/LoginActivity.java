@@ -24,14 +24,17 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.myapplication.Home_Fragment.Home_Child.ThemtintucActivity;
 import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
+import com.example.myapplication.TaoTaiKhoan;
 import com.example.myapplication.ui.login.LoginViewModel;
 import com.example.myapplication.ui.login.LoginViewModelFactory;
 
 public class LoginActivity extends AppCompatActivity {
 
     private LoginViewModel loginViewModel;
+    Button dangki;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,13 +42,21 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         loginViewModel = ViewModelProviders.of(this, new LoginViewModelFactory())
                 .get(LoginViewModel.class);
-
+        dangki = (Button)findViewById(R.id.dangki);
         final EditText usernameEditText = findViewById(R.id.username);
 
         final EditText passwordEditText = findViewById(R.id.password);
         final Button loginButton = findViewById(R.id.login);
         loginButton.isEnabled();
         final ProgressBar loadingProgressBar = findViewById(R.id.loading);
+
+        dangki.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(LoginActivity.this, TaoTaiKhoan.class);
+                startActivity(i);
+            }
+        });
 
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
             @Override

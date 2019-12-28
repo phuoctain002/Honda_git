@@ -8,10 +8,18 @@
         android:title="@string/nav_home" />
     <item
         android:id="@+id/nav_sanpham"
-        android:icon="@drawable/box_icon"
+        android:icon="@drawable/bike_icon"
         android:title="@string/nav_sanpham" />
     <item
         android:id="@+id/nav_dichvu"
         android:icon="@drawable/service_icon"
         android:title="@string/nav_service" />
+    <item
+        android:id="@+id/nav_account"
+        android:icon="@drawable/icon_account"
+        android:title="@string/nav_account" />
+    <item
+        android:id="@+id/nav_setting"
+        android:icon="@drawable/icon_setting"
+        android:title="@string/nav_setting" />
 </menu>

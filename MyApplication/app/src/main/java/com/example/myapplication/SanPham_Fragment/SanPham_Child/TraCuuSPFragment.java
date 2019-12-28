@@ -4,17 +4,38 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.myapplication.R;
+import com.synnapps.carouselview.CarouselView;
+import com.synnapps.carouselview.ImageListener;
 
 public class TraCuuSPFragment extends Fragment {
-    @Nullable
+    View view;
+    CarouselView carouselView;
+    int[] sampleImages = {R.drawable.icontayga, R.drawable.icontayga};
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_tracuusanpham, container, false);
+    public View onCreateView( LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
+        view =  inflater.inflate(R.layout.fragment_tracuusanpham, container, false);
+        addControlls();
+        return view;
     }
+
+    private void addControlls() {
+        carouselView = view.findViewById(R.id.carouselView);
+//        xemthem = findViewById(R.id.xemthem);
+        carouselView.setPageCount(sampleImages.length);
+        carouselView.setImageListener(imageListener);
+    }
+
+    ImageListener imageListener = new ImageListener() {
+        @Override
+        public void setImageForPosition(int position, ImageView imageView) {
+            imageView.setImageResource(sampleImages[position]);
+        }
+    };
 }

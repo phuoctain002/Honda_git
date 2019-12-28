@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapplication">
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
@@ -17,13 +20,20 @@
         <activity
             android:name=".ui.login.LoginActivity"
             android:label="@string/title_activity_login">
+
+        </activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".TaoTaiKhoan"></activity>
+        <activity android:name=".CaiDat"></activity>
+        <activity android:name=".test">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".SanPham_Fragment.SanPham_Child.TraCuuSPFragment"></activity>
+        <activity android:name=".Confirm_Ad" android:theme="@style/Theme.AppCompat.DayNight.Dialog"></activity>
     </application>
 
 </manifest>

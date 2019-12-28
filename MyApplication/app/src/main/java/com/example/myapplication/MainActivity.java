@@ -13,6 +13,7 @@ import android.widget.FrameLayout;
 import com.example.myapplication.DichVu_Fragment.DichVuFragment;
 import com.example.myapplication.Home_Fragment.HomeFragment;
 import com.example.myapplication.Home_Fragment.Home_Child.TintucFragment;
+import com.example.myapplication.SanPham_Fragment.SanPham_Child.SPDaMuaFragment;
 import com.example.myapplication.SanPham_Fragment.SanphamFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -26,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     private TintucFragment tintucFragment;
     private DichVuFragment dichvuFragment;
     private SanphamFragment sanphamFragment;
+    private TaiKhoanFragment taiKhoanFragment;
+    private CaiDat caiDat;
 
 
 
@@ -39,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
         tintucFragment = new TintucFragment();
         dichvuFragment = new DichVuFragment();
         sanphamFragment = new SanphamFragment();
+        taiKhoanFragment = new TaiKhoanFragment();
+        caiDat = new CaiDat();
+
         setFragment(tintucFragment);
 
         mMainNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -54,7 +60,12 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.nav_dichvu:
                         setFragment(dichvuFragment);
                         return true;
-
+                    case R.id.nav_account:
+                        setFragment(taiKhoanFragment);
+                        return true;
+                    case R.id.nav_setting:
+                        setFragment(caiDat);
+                        return true;
                     default:
                         return false;
                 }

@@ -1,22 +1,29 @@
 package com.example.myapplication.Model;
 
-public class TinTucModel {
-    private int ImageId;
+import java.io.Serializable;
+
+public class TinTucModel implements Serializable {
+    private String ImageId;
     private String Title;
     private String Description;
+    public String base64;
 
+    public TinTucModel()
+    {
 
-    public TinTucModel(int imageId, String title, String description) {
+    }
+
+    public TinTucModel(String title, String description,String imageId) {
         ImageId = imageId;
         Title = title;
         Description = description;
     }
 
-    public int getImageId() {
+    public String getImageId() {
         return ImageId;
     }
 
-    public void setImageId(int imageId) {
+    public void setImageId(String imageId) {
         ImageId = imageId;
     }
 
