@@ -27,7 +27,7 @@
         android:hint="Số điện thoại"
         android:inputType="textPhonetic"
         android:selectAllOnFocus="true"
-        android:text="(+84) 0767919280"/>
+        android:text="0767919280"/>
 
     <EditText
         android:id="@+id/password"
@@ -50,6 +50,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <Button
@@ -57,10 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:layout_marginStart="48dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="48dp"
-            android:layout_marginBottom="64dp"
+            android:layout_marginRight="20dp"
             android:enabled="true"
             android:text="Đăng nhập" />
         <Button
@@ -68,12 +66,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
+            android:layout_marginRight="20dp"
             android:text="Đăng kí" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:autoLink="phone"
-            android:layout_marginTop="15dp"
             android:text="@string/quen_mat_khau"
             android:textColor="@color/LightBlue"
             android:textStyle="italic"/>

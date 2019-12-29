@@ -35,17 +35,22 @@
             android:layout_width="80dp"
             android:layout_height="50dp"
             android:text="Hủy"
-            android:background="@color/Gray"
+            android:background="@color/Tran"
             android:textSize="15dp"
-            android:layout_marginRight="10dp"/>
+            android:layout_marginRight="10dp"
+            android:textStyle="bold"
+            />
+
         <Button
             android:id="@+id/Confirm"
-            android:layout_marginLeft="10dp"
             android:layout_width="80dp"
             android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/Tran"
             android:text="Xác nhận"
-            android:textSize="15dp"
-            android:background="@color/Green"/>
+            android:textColor="#079C09"
+            android:textStyle="bold"
+            android:textSize="15dp" />
     </LinearLayout>
 
 </LinearLayout>

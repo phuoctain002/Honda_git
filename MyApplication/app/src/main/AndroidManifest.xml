@@ -12,9 +12,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/logo_honda"
+        android:icon="@drawable/honda_logo"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/logo_honda"
+        android:roundIcon="@drawable/honda_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar">
         <activity android:name=".Home_Fragment.Home_Child.ThemtintucActivity"></activity>
@@ -23,6 +23,7 @@
             android:label="@string/title_activity_login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
@@ -31,7 +32,7 @@
         <activity android:name=".MainActivity">
 
         </activity>
-        <activity android:name=".TaoTaiKhoan"></activity>
+        <activity android:name=".TaoTaiKhoan" android:theme="@style/Theme.Design.Light.NoActionBar"></activity>
         <activity android:name=".Chitiettintuc"></activity>
         <activity android:name=".CaiDat"></activity>
         <activity android:name=".DaiLy"></activity>
@@ -42,7 +43,8 @@
         </activity>
         <activity android:name=".ChiTietSanPham"></activity>
         <activity android:name=".SanPham_Fragment.SanPham_Child.TraCuuSPFragment"></activity>
-        <activity android:name=".Confirm_Ad" android:theme="@style/Theme.AppCompat.DayNight.Dialog"></activity>
+        <activity android:name=".Confirm_Ad" android:theme="@style/Theme.AppCompat.DayNight.Dialog"
+            android:label="Admin"></activity>
     </application>
 
 </manifest>

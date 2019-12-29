@@ -52,12 +52,8 @@ public class TaiKhoanFragment extends Fragment {
         mDatabase = FirebaseDatabase.getInstance().getReference("taikhoan");
         mDatabase.orderByChild("sdt").equalTo("0767919280").addChildEventListener(
                 new ChildEventListener() {
-
-
                     @Override
                     public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-
                         progressBar.setVisibility(view.GONE);
                         taiKhoan = dataSnapshot.getValue(TaiKhoan.class);
                         edTen.setText(taiKhoan.getTen());
@@ -65,6 +61,7 @@ public class TaiKhoanFragment extends Fragment {
                         edNgaysinh.setText(taiKhoan.getNgaysinh());
                         edDiachi.setText(taiKhoan.getDiachi());
                         edMatkhau.setText(taiKhoan.getMatkhau());
+
                         byte[] decodedString = Base64.decode(taiKhoan.getHinh(), Base64.DEFAULT);
                         Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
                         imgAva.setImageBitmap(decodedByte);

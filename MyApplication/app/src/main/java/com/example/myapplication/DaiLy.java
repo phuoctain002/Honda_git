@@ -35,7 +35,7 @@ public class DaiLy extends AppCompatActivity {
     }
 
     private void addData() {
-        DailyModel d1 = new DailyModel(R.drawable.daily, "dia chi", "0767919280");
+        DailyModel d1 = new DailyModel(R.drawable.daily, "454 Nguyễn thị thập phường tân quy Quận 7,TPHCM", "0767919280");
         adapter.add(d1);
 
     }

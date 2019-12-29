@@ -5,9 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="120dp"
     card_view:cardUseCompatPadding="true"
     card_view:cardCornerRadius="8dp"
+    android:gravity="center"
     >
 
     <LinearLayout
@@ -34,12 +35,13 @@
                 android:text="Đại lý Yamaha bán xe honda"
                 android:textSize="15dp"
                 android:textStyle="bold"
-                android:layout_marginBottom="5dp">
+                android:layout_marginBottom="7dp">
             </TextView>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp">
 
                 <ImageView
                     android:layout_width="20dp"
@@ -51,7 +53,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Địa chỉ"
+                    android:text="Địa chỉ:"
                     android:textSize="15dp"
                     android:textStyle="italic"
                     android:layout_marginRight="10dp"
@@ -86,21 +88,24 @@
                     android:text="Số điện thoại:">
                 </TextView>
                 <TextView
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
                     android:id="@+id/txtSDT"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0988659168"
                     android:textStyle="italic|bold"
                     >
 
                 </TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(Bấm để gọi)"
+                    android:textStyle="italic"
+                    android:layout_gravity="center"/>
             </LinearLayout>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="(Bấm để gọi)"
-                android:textStyle="italic"
-                android:layout_gravity="center"/>
+
         </LinearLayout>
 
 

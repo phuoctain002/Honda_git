@@ -95,11 +95,8 @@ public class XeActivity extends AppCompatActivity {
             mDatabase.orderByChild("loai").equalTo(sessionId).addChildEventListener(
                     new ChildEventListener() {
 
-
                         @Override
                         public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-
                             progressBar.setVisibility(view.GONE);
                             XeModel xe = dataSnapshot.getValue(XeModel.class);
                             xeAdapter.add(xe);
@@ -140,8 +137,6 @@ public class XeActivity extends AppCompatActivity {
         listXe = findViewById(R.id.listXe);
         progressBar = findViewById(R.id.progressBar);
         tvTitle = findViewById(R.id.tvTitle);
-
-
     }
 
     private void addEvent()
