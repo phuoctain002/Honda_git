@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -21,9 +22,13 @@ import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.example.myapplication.Adapter.TintucAdapter;
+import com.example.myapplication.ChiTietSanPham;
+import com.example.myapplication.Chitiettintuc;
 import com.example.myapplication.MainActivity;
 import com.example.myapplication.Model.TinTucModel;
+import com.example.myapplication.Model.XeModel;
 import com.example.myapplication.R;
+import com.example.myapplication.XeActivity;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -41,7 +46,6 @@ public class TintucFragment extends Fragment{
     private View view;
     ListView listTintuc;
     ArrayList<TinTucModel> arrayList;
-    TintucAdapter tintucAdapter;
     Button them;
     TintucAdapter adapter;
     // database
@@ -56,6 +60,7 @@ public class TintucFragment extends Fragment{
 
        addControlls();
        addData();
+       addEvent();
        addFirebBase();
 
         viewFlipper = view.findViewById(R.id.v_flipper);
@@ -108,6 +113,21 @@ public class TintucFragment extends Fragment{
         listTintuc.setAdapter(adapter);
     }
 
+    private void addEvent()
+    {
+        listTintuc.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                TinTucModel tt = adapter.getItem(position);
+                Intent intent = new Intent(TintucFragment.this.getActivity(), Chitiettintuc.class);
+                intent.putExtra("HINH",tt.getBase64());
+                intent.putExtra("TITLE",tt.getTitle());
+                intent.putExtra("DETAIL",tt.getDetail());
+                startActivity(intent);
+
+            }
+        });
+    }
 
 
     private void addControlls() {
