@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TabHost;
+import android.widget.TabWidget;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,7 +12,7 @@ import com.example.myapplication.Model.XeModel;
 
 public class ChiTietSanPham extends AppCompatActivity {
 
-    TextView tvChitiet;
+    TextView tvChitiet,tvTenXe;
     private String tenxe;
     private String giaxe;
     private String mauxe;
@@ -25,8 +26,10 @@ public class ChiTietSanPham extends AppCompatActivity {
         tenxe = getIntent().getStringExtra("TENXE");
         giaxe = getIntent().getStringExtra("GIAXE");
         mauxe = getIntent().getStringExtra("MAUXE");
+        tvTenXe = findViewById(R.id.tvTenXe);
         tvChitiet = findViewById(R.id.txtThongsokithuat);
         tvChitiet.setText(chitiet);
+        tvTenXe.setText(tenxe);
 
     }
     public void loadTabs()
@@ -52,7 +55,9 @@ public class ChiTietSanPham extends AppCompatActivity {
         spec.setIndicator("Giá và màu");
         tab.addTab(spec);
         //Thiết lập tab mặc định được chọn ban đầu là tab 0
-        tab.setCurrentTab(0);}
+        tab.setCurrentTab(0);
+
+    }
 
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {

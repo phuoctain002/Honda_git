@@ -136,7 +136,6 @@ public class XeActivity extends AppCompatActivity {
     }
 
 
-
     private void addControlls() {
         listXe = findViewById(R.id.listXe);
         progressBar = findViewById(R.id.progressBar);

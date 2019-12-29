@@ -9,6 +9,7 @@ public class TaiKhoan implements Serializable {
     private String ten;
     private String ngaysinh;
     private String diachi;
+    private String hinh;
 
     public TaiKhoan(){}
 
@@ -65,5 +66,13 @@ public class TaiKhoan implements Serializable {
 
     public void setDiachi(String diachi) {
         this.diachi = diachi;
+    }
+
+    public String getHinh() {
+        return hinh;
+    }
+
+    public void setHinh(String hinh) {
+        this.hinh = hinh;
     }
 }

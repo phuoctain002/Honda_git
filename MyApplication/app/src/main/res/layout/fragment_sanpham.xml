@@ -30,7 +30,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="2dp"
                 android:layout_gravity="center"
-                android:background="@drawable/icon_honda" />
+                android:background="@drawable/icon_hon" />
         </RelativeLayout>
 
     </Toolbar>

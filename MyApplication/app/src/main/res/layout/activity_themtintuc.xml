@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/border_button"
-            android:textColor="@color/White"
+            android:textColor="@color/RedButton"
             android:textStyle="bold"
             android:text="upload"/>
     </LinearLayout>
@@ -81,7 +81,7 @@
         android:layout_marginTop="20dp"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/border_button"
-        android:textColor="@color/White"
+        android:textColor="@color/RedButton"
         android:textStyle="bold"
         android:text="Save"/>
 </LinearLayout>

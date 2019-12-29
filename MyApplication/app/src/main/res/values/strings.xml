@@ -62,7 +62,7 @@ Learn more about components on the Jetpack home page. For more information about
     <string name="title_sanpham">Sản phẩm</string>
     <string name="title_home">Trang chính</string>
     <string name="title_setting">Cài đặt</string>
-    <string name="title_activity_login">Sign in</string>
+    <string name="title_activity_login">Honda</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>

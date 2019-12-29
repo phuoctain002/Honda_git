@@ -9,6 +9,27 @@
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
     tools:context=".ChiTietSanPham">
+    <Toolbar
+        android:layout_marginLeft="-15dp"
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvTenXe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textSize="20dp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"/>
+
+        </RelativeLayout>
+
+    </Toolbar>
     <TabHost
         android:id="@android:id/tabhost"
         android:layout_width="match_parent"
@@ -23,7 +44,8 @@
                 android:id="@android:id/tabs"
                 android:layout_width="match_parent"
                 android:textAlignment="center"
-                android:layout_height="50dp">
+                style="@style/TabBar"
+                android:layout_height="60dp">
 
             </TabWidget>
 

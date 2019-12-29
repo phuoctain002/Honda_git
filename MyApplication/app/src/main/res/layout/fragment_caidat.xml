@@ -4,6 +4,42 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <Toolbar
+        android:layout_marginLeft="-15dp"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tùy chỉnh"
+                android:layout_centerInParent="true"
+                android:textSize="20dp"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2dp"
+                android:layout_gravity="center"
+                android:background="@drawable/icon_hon" />
+        </RelativeLayout>
+
+    </Toolbar>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:text="Chọn chức năng"/>
     <Button
         android:id="@+id/btnAddTinTuc"
         android:layout_width="match_parent"
@@ -11,7 +47,19 @@
         android:padding="20dp"
         android:layout_margin="20dp"
         android:text="Thêm tin tức"
+        android:textColor="@color/Black"
+        android:textStyle="bold"
+        android:background="@color/Tran"/>
+
+    <Button
+        android:id="@+id/btnDangxuat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:layout_margin="20dp"
+        android:gravity="bottom|center"
+        android:text="Đăng xuất"
         android:textColor="@color/RedButton"
         android:textStyle="bold"
-        android:background="@drawable/border_button"/>
+        android:background="@color/Tran"/>
 </LinearLayout>
