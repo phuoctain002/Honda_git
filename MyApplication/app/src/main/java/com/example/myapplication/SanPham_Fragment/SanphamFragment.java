@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TabHost;
@@ -19,6 +20,7 @@ import android.widget.TabWidget;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
+import android.widget.ViewFlipper;
 
 import com.example.myapplication.Adapter.XedamuaAdapter;
 import com.example.myapplication.Model.XedamuaModel;
@@ -50,7 +52,9 @@ public class SanphamFragment extends Fragment {
     private Toolbar toolbar;
     View view;
     public String loaixe;
-    Button btnXeTayga, btnXeso, btnMoto;
+    Button btnXeTayga, btnXeso, btnMoto, btnContay;
+    TextView btnXemall;
+    private ViewFlipper viewFlipper;
 
 
     int[] sampleImages = {R.drawable.icontayga, R.drawable.icontayga};
@@ -59,6 +63,7 @@ public class SanphamFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        int images[] = {R.drawable.banner_1,R.drawable.banner_2,R.drawable.banner_3};
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_sanpham, container, false);
         arrayList = new ArrayList<>();
@@ -66,6 +71,10 @@ public class SanphamFragment extends Fragment {
         xedamuaAdapter = new XedamuaAdapter(SanphamFragment.this.getActivity(),R.layout.item_listview_xedamua);
 
         btnXeTayga = view.findViewById(R.id.btnXetayga);
+        btnXeso = view.findViewById(R.id.btnXeso);
+        btnMoto = view.findViewById(R.id.btnMoto);
+        btnContay = view.findViewById(R.id.btnContay);
+        btnXemall = view.findViewById(R.id.xemall);
 
         View.OnClickListener eventLoaiXe = new View.OnClickListener() {
             @Override
@@ -75,11 +84,21 @@ public class SanphamFragment extends Fragment {
         };
 
         btnXeTayga.setOnClickListener(eventLoaiXe);
+        btnXeso.setOnClickListener(eventLoaiXe);
+        btnMoto.setOnClickListener(eventLoaiXe);
+        btnContay.setOnClickListener(eventLoaiXe);
+        btnXemall.setOnClickListener(eventLoaiXe);
 
         loadTabs();
         addControlls();
         addData();
         addFirebBase();
+
+        viewFlipper = view.findViewById(R.id.v_flipper);
+        for(int image: images)
+        {
+            flipperImages(image);
+        }
 
 
 
@@ -167,36 +186,43 @@ public class SanphamFragment extends Fragment {
         Intent intent = new Intent(SanphamFragment.this.getActivity(), XeActivity.class);
         switch(v.getId()){
 
-            case R.id.btnXetayga: /** Start a new Activity MyCards.java */
+            case R.id.btnXetayga:
                 this.loaixe = "Tay ga";
-
-                intent.putExtra("LOAIXE",loaixe);
-                this.startActivity(intent);
                 break;
 
             case R.id.btnXeso:
-                this.loaixe = "xeso";
-
-                intent.putExtra("LOAIXE",loaixe);
-                this.startActivity(intent);
+                this.loaixe = "Xe số";
                 break;
 
             case R.id.btnMoto:
-                this.loaixe = "xetaycon";
-
-                intent.putExtra("LOAIXE",loaixe);
-                this.startActivity(intent);
+                this.loaixe = "Mô tô";
                 break;
 
             case R.id.btnContay:
-                this.loaixe = "xemoto";
-
-                intent.putExtra("LOAIXE",loaixe);
-                this.startActivity(intent);
+                this.loaixe = "Tay côn";
                 break;
+
+            case R.id.xemall:
+                this.loaixe = "Tất cả";
+                break;
+
         }
+        intent.putExtra("LOAIXE",loaixe);
+        this.startActivity(intent);
 
 
+    }
+
+    public void flipperImages(int image){
+        ImageView imageView =  new ImageView(getContext());
+        imageView.setBackgroundResource(image);
+
+        viewFlipper.addView(imageView);
+        viewFlipper.setFlipInterval(3000);
+        viewFlipper.setAutoStart(true);
+
+        viewFlipper.setInAnimation(getContext(), android.R.anim.slide_in_left);
+        viewFlipper.setOutAnimation(getContext(), android.R.anim.slide_out_right);
     }
 
 }

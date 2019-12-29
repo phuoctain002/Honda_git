@@ -30,11 +30,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
-            android:layout_marginStart="@dimen/fab_margin"
-            android:layout_marginTop="@dimen/fab_margin"
             android:layout_marginEnd="@dimen/fab_margin"
             android:layout_marginBottom="60dp"
-            app:srcCompat="@android:drawable/sym_call_outgoing" />
+            android:src="@drawable/ic_call_black_24dp"
+            android:tint="@color/Green"
+
+            app:backgroundTint="#E214700D" />
     </FrameLayout>
 
 </RelativeLayout>

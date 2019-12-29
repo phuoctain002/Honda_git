@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:gravity="center"
+    tools:context=".TaoTaiKhoan"
+    >
 
 
-
+    <EditText
+        android:id="@+id/edMail"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:hint="Email"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center"/>
     <EditText
         android:id="@+id/edSdt"
     android:layout_width="300dp"
@@ -27,7 +36,7 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="10dp"
     android:layout_gravity="center_horizontal"
-        android:onClick="SignUp"
+    android:onClick="SignUp"
     android:text="Tạo"/>
 
     <ProgressBar

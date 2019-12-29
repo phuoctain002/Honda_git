@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".Home_Fragment.Home_Child.userFragment">
     <androidx.cardview.widget.CardView
         card_view:cardUseCompatPadding="true"
         card_view:cardCornerRadius="8dp"
@@ -34,30 +36,35 @@
 
     </androidx.cardview.widget.CardView>
     <EditText
+        android:id="@+id/edTen"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:hint="Họ tên"
         android:layout_marginBottom="20dp"
         android:layout_gravity="center"/>
     <EditText
+        android:id="@+id/edSDT"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:hint="Số điện thoại"
         android:layout_marginBottom="20dp"
         android:layout_gravity="center"/>
     <EditText
+        android:id="@+id/edNgaysinh"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:hint="Ngày sinh"
         android:layout_marginBottom="20dp"
         android:layout_gravity="center"/>
     <EditText
+        android:id="@+id/edDiachi"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:hint="Địa chỉ"
         android:layout_marginBottom="20dp"
         android:layout_gravity="center"/>
     <EditText
+        android:id="@+id/edMatkhau"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:hint="Mật khẩu"

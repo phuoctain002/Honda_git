@@ -37,18 +37,14 @@ public class TaoTaiKhoan extends AppCompatActivity {
 
 
     EditText sdt;
+    EditText mail;
     EditText mk;
     Button save;
 
-    String sdtString;
-    String mkString;
-
 
     DatabaseReference mDatabase;
-    StorageReference mStorage;
     FirebaseAuth firebaseAuth;
     ProgressBar progressBar;
-    TaiKhoan taiKhoan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +60,7 @@ public class TaoTaiKhoan extends AppCompatActivity {
     {
         sdt = findViewById(R.id.edSdt);
         mk = findViewById(R.id.edMk);
+        mail = findViewById(R.id.edMail);
         progressBar = findViewById(R.id.progressBar);
         mDatabase = FirebaseDatabase.getInstance().getReference("taikhoan");
         firebaseAuth = FirebaseAuth.getInstance();
@@ -72,44 +69,55 @@ public class TaoTaiKhoan extends AppCompatActivity {
 
 
     public void SignUp(View view) {
-        final String SDT = sdt.getText().toString();
-        final String Pass = mk.getText().toString();
-        if (SDT.isEmpty()) {
-            sdt.setError("Vui lòng nhập tên!");
+        final String sdtString = sdt.getText().toString();
+        final String emailString = mail.getText().toString();
+        final String passwordString = mk.getText().toString();
+        if (sdtString.isEmpty()) {
+            sdt.setError("Vui lòng nhập số điện thoại!");
             sdt.requestFocus();
             return;
-        } else if (Pass.isEmpty()) {
+        } else if (emailString.isEmpty()) {
+            mail.setError("Vui lòng nhập email!");
+            mail.requestFocus();
+            return;
+        } else if (passwordString.isEmpty()) {
             mk.setError("Vui lòng nhập mật khẩu");
             mk.requestFocus();
             return;
         }
-        if(Pass.length()<6){
-            mk.setError("Mật khẩu phải hơn 6 ký tự");
+        else if(!Patterns.EMAIL_ADDRESS.matcher(emailString).matches()){
+            mail.setError("Vui lòng nhập đúng địa chỉ email");
+            mail.requestFocus();
+            return;
+
+        }
+        if(passwordString.length()>10){
+            mk.setError("Mật khẩu không quá 10 ký tự");
             mk.requestFocus();
             return;
         }
         else {
             progressBar.setVisibility(View.VISIBLE);
-            firebaseAuth.createUserWithEmailAndPassword(SDT, Pass).addOnCompleteListener(TaoTaiKhoan.this, new OnCompleteListener<AuthResult>() {
+            firebaseAuth.createUserWithEmailAndPassword(emailString, passwordString).addOnCompleteListener(TaoTaiKhoan.this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
 
                     progressBar.setVisibility(View.GONE);
                     if (task.isSuccessful()) {
-                        TaiKhoan user = new TaiKhoan(
-                                SDT,
-                                Pass
+                        TaiKhoan taikhoan = new TaiKhoan(
+                                sdtString,
+                                emailString,
+                                passwordString
                         );
                         FirebaseDatabase.getInstance().getReference("taikhoan")
                                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                .setValue(taikhoan).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 Toast.makeText(TaoTaiKhoan.this, "Đăng ký thành công!", Toast.LENGTH_SHORT).show();
-                                Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                                Intent i = new Intent(getApplicationContext(), LoginActivity.class);
                                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(i);
-
                             }
                         });
                     }

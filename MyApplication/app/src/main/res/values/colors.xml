@@ -5,6 +5,7 @@
     <color name="colorAccent">#D81B60</color>
     <color name="White">#FFFFFF</color>
     <color name="Transparent">#80FFFFFF</color>
+    <color name="Tran">#00000000</color>
     <color name="Red">#FF4343</color>
     <color name="LightBlue">#27A6F9</color>
     <color name="Black">#0D212E</color>

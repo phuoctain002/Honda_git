@@ -57,5 +57,7 @@ public class XeAdapter extends ArrayAdapter<XeModel> {
         return  convertView;
     }
 
+
+
 }
 

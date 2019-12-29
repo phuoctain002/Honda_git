@@ -22,6 +22,7 @@ public class TraCuuSPFragment extends Fragment {
     int[] sampleImages = {R.drawable.icontayga, R.drawable.icontayga};
     @Override
     public View onCreateView( LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
+
         view =  inflater.inflate(R.layout.fragment_tracuusanpham, container, false);
         addControlls();
 
@@ -29,10 +30,6 @@ public class TraCuuSPFragment extends Fragment {
     }
 
     private void addControlls() {
-        carouselView = view.findViewById(R.id.carouselView);
-//        xemthem = findViewById(R.id.xemthem);
-        carouselView.setPageCount(sampleImages.length);
-        carouselView.setImageListener(imageListener);
     }
 
     ImageListener imageListener = new ImageListener() {
@@ -46,7 +43,7 @@ public class TraCuuSPFragment extends Fragment {
 
         switch(v.getId()){
 
-            case R.id.btnXetayga: /** Start a new Activity MyCards.java */
+            case R.id.btnXetayga:
                 this.loaixe = "Tay ga";
                 Intent intent = new Intent(TraCuuSPFragment.this.getActivity(), XeActivity.class);
                 intent.putExtra("LOAIXE",loaixe);
